@@ -36,7 +36,7 @@ def last_plays(user_id, length):
 def recent_scores(user_id, length):
     if (length > 0) and (length <= 100):
         URL = "{}user/scores/recent?id={}&l={}".format(url_gatari, user_id, length)
-    else: print("Error неверный диапазон\n")
+    else: return "Error неверный диапазон\n"
     return requests_gatari(URL)
 
 
