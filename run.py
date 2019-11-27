@@ -1,6 +1,6 @@
 import gatariapi as ga
 
-user_id = 2208
+user_id = 6246
 def userinformation(user_id):
     r = ga.user_info(user_id)
     if (r["code"] == 200):
@@ -49,7 +49,10 @@ def activity(user_id):
         r = title.find("'>")
         text = title[:-8+l] + title[r+2: -4]
         edit_text = text.replace('<b>', '').replace('</b>', '')
-        print("rank:(", i["data"][1]["rank"],') ', edit_text)
+        try:
+            print("rank:(", i["data"][1]["rank"],') ', edit_text)    
+        except IndexError:
+            print(edit_text)
         print('link: https://osu.gatari.pw/' + title[l+2: +r])
 
 song_id = 1842043
@@ -66,18 +69,14 @@ def check_map(user_id, song_id):
 
 def pp_checker(user_id):
     r = ga.pp_values(user_id)
-    print(r)
-    data = r["data"]
-    if(data["-59"]== None):
-        print('За день: 0.0pp')
-        print('За неделю:', data["-58"] - data["-53"])
-        print('За неделю:', data["-58"] - data["-29"])
-    else:
-        result1 = data["-59"] - data["-58"]
-        print(result1)
+    print('Общий рр:',r["data"][59][1])
+    result1 = str(int(r["data"][59][1]) - int(r["data"][58][1]))
+    result7 = str(int(r["data"][59][1]) - int(r["data"][52][1]))
+    result30 = str(int(r["data"][59][1]) - int(r["data"][29][1]))
+    print("За день: {} \nЗа неделю: {} \nЗа месяц: {}".format(result1, result7, result30))
 
-    
 
+#def favorite_map_check(user_id):
 
 #recent_plays(user_id)
 activity(user_id)
