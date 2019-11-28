@@ -1,6 +1,6 @@
 import gatariapi as ga
 
-user_id = 2208
+user_id = 2056
 def userinformation(user_id):
     r = ga.user_info(user_id)
     if (r["code"] == 200):
@@ -68,16 +68,21 @@ def check_map(user_id, song_id):
 
 def pp_checker(user_id):
     r = ga.pp_values(user_id)
-    print('Общий рр:',r["data"][59][1])
     result1 = str(int(r["data"][59][1]) - int(r["data"][58][1]))
     result7 = str(int(r["data"][59][1]) - int(r["data"][52][1]))
     result30 = str(int(r["data"][59][1]) - int(r["data"][29][1]))
+    print('Общий рр:',r["data"][59][1])
     print(f'За день: {result1} \nЗа неделю: {result7} \nЗа месяц: {result30}')
 
 
-#def favorite_map_check(user_id):
+def favorite_map_check(user_id):
+    page = 5
+    r = ga.favorite_maps(user_id, page)
+    print(r)
 
-import time
+
+favorite_map_check(user_id)
+'''import time
 time.sleep(5)
 print('userinformation')
 userinformation(user_id)
@@ -99,3 +104,4 @@ last_score(user_id)
 time.sleep(5)
 print('\n\nstatistic')
 statistic(user_id)
+'''
