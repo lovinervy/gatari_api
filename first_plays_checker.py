@@ -20,7 +20,6 @@ def push():
     text_lost = title[-1:rr] + title[ll:+20]
     b_id = title[l+2: +r]
     text = title[:-8+l] + title[r+2: -4]
-    print(data[0]['id'])
     edit_text = text.replace('<b>', '').replace('</b>', '')
     if (b_id != lost_id) and (text_lost =='has lost first place') :
         lost_id = b_id
@@ -33,6 +32,5 @@ def push():
 def run():
     while True:
         push()
-        time.sleep(60)
-        print(lost_id) 
+        time.sleep(60) 
 run()
