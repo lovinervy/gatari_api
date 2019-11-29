@@ -9,12 +9,11 @@ def user_activity():
     return user_information
 
 
-time_id = None
 lost_id = None
 
 
 def push():
-    global lost_id, time_id
+    global lost_id
     r = user_activity()
     data = r['data']
     title = data[0]['log']
