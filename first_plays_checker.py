@@ -16,6 +16,7 @@ def push():
     global lost_id
     r = user_activity()
     data = r['data']
+    print(data)
     title = data[0]['log']
     log_id = data[0]['id']
     log_check_id = data[0]['type']
@@ -27,9 +28,10 @@ def push():
         lost_id = log_id
         print('You', text, f'\n link: https://osu.gatari.pw/{beatmap_id}')
 
-n = 0
+'''n = 0
 while True:
     n +=1
     push()
     if(n==3):break
-    time.sleep(5)
+    time.sleep(5)'''
+push()
