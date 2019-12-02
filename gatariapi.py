@@ -9,39 +9,31 @@ def requests_gatari(URL):
     return user_information
 
 
-def user_info(user_id):
-    URL = f"{url_gatari}users/get?u={user_id}"
+def user_info(u):
+    URL = f"{url_gatari}users/get?u={u}"
     return requests_gatari(URL)
         
 
-
-def user_parser(user_id1, user_id2):
-    if (user_id1 > user_id2):
-        URL = f"{url_gatari}users/get?ids={user_id2}&ids={user_id1}"
+def users_info_pars(u1, u2):
+    if (u1 > u2):
+        URL = f"{url_gatari}users/get?ids={u2}&ids={u1}"
     else:
-        URL = f"{url_gatari}users/get?ids={user_id1}&ids={user_id2}"
+        URL = f"{url_gatari}users/get?ids={u1}&ids={u2}"
     return requests_gatari(URL)
 
 
-def user_modes(user_id, get_mode):
-    URL = f"{url_gatari}user/stats?u={user_id}&mode={get_mode}"
-    return requests_gatari(URL)
-
-
-def last_plays(user_id, length):
-    URL = f"{url_gatari}user/scores/recent?id={user_id}&l={length}"
+def user_stats(u,mode):
+    URL = f"{url_gatari}user/stats?u={u}&mode={mode}"
     return requests_gatari(URL)
     
 
-def recent_scores(user_id, length):
-    if (length > 0) and (length <= 100):
-        URL = f"{url_gatari}user/scores/recent?id={user_id}&l={length}"
-    else: return "Error неверный диапазон\n"
+def recent_scores(u, l, p, mode, f, ppf):
+    URL = f"{url_gatari}user/scores/recent?id={u}&l={l}&p={p}&mode={mode}&f={f}&ppFilter={ppf}"
     return requests_gatari(URL)
 
 
-def best_score(user_id, length):
-    URL = f"{url_gatari}user/scores/best?id={user_id}&l={length}"
+def best_score(u, l, p, mode, mods):
+    URL = f"{url_gatari}user/scores/best?id={u}&l={l}&p={p}&mode={mode}&mods={mods}"
     return requests_gatari(URL)    
 
 
