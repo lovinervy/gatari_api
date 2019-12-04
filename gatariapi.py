@@ -37,41 +37,76 @@ def best_score(u, l, p, mode, mods):
     return requests_gatari(URL)    
 
 
-def first_plays(user_id, length):
-    URL = f"{url_gatari}user/scores/first?id={user_id}&l={length}"
+def first_places(u, l, mode, p):
+    URL = f"{url_gatari}user/scores/first?id={u}&mode={mode}&p={p}&l={l}"
     return requests_gatari(URL)
 
 
-def most_plays(user_id, mode, page):
-    URL = f"{url_gatari}user/mostplays?id={user_id}&mode={mode}&page={page}"
+def most_played(u, mode, p):
+    URL = f"{url_gatari}user/mostplays?id={u}&mode={mode}&page={p}"
     return requests_gatari(URL)
 
 
-def favorite_scores(user_id, mode, page, length):
-    URL = f"{url_gatari}user/scores/favs?id={user_id}&mode={mode}&p={page}&l={length}"
+def favorite_scores(u, mode, p, l):
+    URL = f"{url_gatari}user/scores/favs?id={u}&mode={mode}&p={p}&l={l}"
     return requests_gatari(URL)
 
 
-def check_achievments(user_id, mode):
-    URL = f"{url_gatari}user/achievements?u={user_id}&mode={mode}"
+def check_achievments(u, mode):
+    URL = f"{url_gatari}user/achievements?u={u}&mode={mode}"
     return requests_gatari(URL)
 
 
-def favorite_maps(user_id, page):
-    URL = f"{url_gatari}user/favs?id={user_id}&p={page}"
+def favorite_maps(u, p):
+    URL = f"{url_gatari}user/favs?id={u}&p={p}"
     return requests_gatari(URL)
 
 
-def pp_values(user_id):
-    URL = f"{url_gatari}user/charts?u={user_id}"
+def pp_values(u, mode):
+    URL = f"{url_gatari}user/charts?u={u}&mode={mode}"
     return requests_gatari(URL)
 
 
-def user_activity(user_id, mode):
-    URL = f"{url_gatari}user/events?u={user_id}&mode={mode}"
+def user_activity(u, mode):
+    URL = f"{url_gatari}user/events?u={u}&mode={mode}"
     return requests_gatari(URL)
 
 
-def score_on_map(user_id, beatmap_id):
-    URL = f"{url_gatari}beatmap/user/score?b={beatmap_id}&u={user_id}"
+def score_on_map(u, b, mode):
+    URL = f"{url_gatari}beatmap/user/score?b={b}&u={u}&mode={mode}"
+    return requests_gatari(URL)
+
+
+def pp_leaderboard(mode, p, country):
+    URL = f"{url_gatari}leaderboard/pp?m={mode}&p={p}&country={country}"
+    return requests_gatari(URL)
+
+
+def score_leaderboard(mode, p, country):
+    URL = f"{url_gatari}leaderboard/score?m={mode}&p={p}&country={country}"
+    return requests_gatari(URL)
+
+
+def clans_leaderboard(p):
+    URL = f"{url_gatari}leaderboard/clans?p={p}"
+    return requests_gatari(URL)
+
+
+def beatmap_scores(b, mode):
+    URL = f"{url_gatari}beatmap/{b}/scores?mode={mode}"
+    return requests_gatari(URL)
+
+
+def beatmap_information(b):
+    URL = f"{url_gatari}beatmaps/get?bb={b}"
+    return requests_gatari(URL)
+
+
+def pp_on_map(b, a, x, c, mods):
+    URL = f"https://osu.gatari.pw/api/v1/pp?b={b}&a={a}&x={x}&c={c}&m={mods}"
+    return requests_gatari(URL)
+
+
+def top_scores_on_period(mode, period):
+    URL = f"{url_gatari}top_scores?mode={mode}&period={period}"
     return requests_gatari(URL)
