@@ -20,13 +20,13 @@ def user_stats(u, mode=None):
     return r
 
 
-def recent_scores(u, l, p, mode, f, ppf):
+def recent_scores(u, mode, l=None, p=None, f=None, ppf=None):
     url_params = {'id': u, 'l': l, 'p': p, 'mode': mode, 'f': f, 'ppFilter': ppf}
     r = requests.get('https://api.gatari.pw/user/scores/recent', params=url_params).json()
     return r
 
 
-def best_score(u, l, p, mode, mods):
+def best_scores(u, l, p, mode, mods=None):
     url_params = {'id': u, 'l': l, 'p': p, 'mode': mode, 'mods': mods}
     r = requests.get('https://api.gatari.pw/user/scores/best', params=url_params).json()
     return r
@@ -80,13 +80,13 @@ def score_on_map(u, b, mode):
     return r
 
 
-def pp_leaderboard(mode, p, country):
+def pp_leaderboard(mode, p, country=None):
     url_params = {'m': mode, 'p': p, 'country': country}
     r = requests.get('https://api.gatari.pw/leaderboard/pp', params=url_params).json()
     return r
 
 
-def score_leaderboard(mode, p, country):
+def score_leaderboard(mode, p, country=None):
     url_params = {'m': mode, 'p': p, 'country': country}
     r = requests.get('https://api.gatari.pw/leaderboard/score', params=url_params).json()
     return r
@@ -110,7 +110,7 @@ def beatmap_information(b):
     return r
 
 
-def pp_on_map(b, a, x, c, mods):
+def pp_on_map(b, a=100, x=0, c=None, mods=0):
     url_params = {'b': b, 'a': a, 'x': x, 'c':c, 'm': mods}
     r = requests.get('https://osu.gatari.pw/api/v1/pp', params=url_params).json()
     return r
@@ -120,3 +120,5 @@ def top_scores_on_per(mode, period):
     url_params = {'mode': mode, 'period': period}
     r = requests.get('https://api.gatari.pw/top_scores', params=url_params).json()
     return r
+
+
