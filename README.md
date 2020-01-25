@@ -9,7 +9,7 @@
 <h3 class="code-line" data-line-start=8 data-line-end=9 ><a id="___GATARIAPI_8"></a><strong>ДОКУМЕНТАЦИЯ ПО МОДУЛЮ GATARIAPI:</strong></h3>
 </blockquote>
 <p class="has-line-data" data-line-start="9" data-line-end="11">Все запросы происходят по html, в ответ возвращается html текст, которое сохраняется и обрабатывается как json файл.<br>
-Подробнее для анализа json файлов и последующей манипуляции можно ознакомиться на сайте <a href="gatari api">https://osu.gatari.pw/docs/api</a> .</p>
+Подробнее для анализа json файлов и последующей манипуляции можно ознакомиться на сайте <a href="https://osu.gatari.pw/docs/api">gatari api</a> .</p>
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
