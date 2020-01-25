@@ -1,6 +1,6 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="gatariapi____0"></a>gatariapi (В процессе редактирование)</h1>
 <blockquote>
-<p class="has-line-data" data-line-start="1" data-line-end="2">run &amp; first_plays_checker пока не работают</p>
+<p class="has-line-data" data-line-start="1" data-line-end="2">run &amp; first_plays_checker примеры работы с апи</p>
 </blockquote>
 <p class="has-line-data" data-line-start="3" data-line-end="6">ДЛЯ ЗАПУСКА СКРИПТА ТРЕБУЕТСЯ УСТАНОВИТЬ PYTHON<br>
 А ДЛЯ КОРРЕКТНОЙ РАБОТЫ УСТАНОВИТЬ МОДУЛИ.<br>
