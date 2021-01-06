@@ -1,4 +1,4 @@
-<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="gatariapi____0"></a>gatariapi (В процессе редактирование)</h1>
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="gatariapi____0"></a>gatariapi (В процессе редактирование) Не работает, когда нить до неё доберусь</h1>
 <blockquote>
 <p class="has-line-data" data-line-start="1" data-line-end="2">run &amp; first_plays_checker примеры работы с апи</p>
 </blockquote>
